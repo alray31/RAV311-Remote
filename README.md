@@ -2,11 +2,13 @@
 
 Control your Yamaha AV receiver from Home Assistant via infrared, using the native [`infrared`](https://www.home-assistant.io/integrations/infrared/) building block introduced in HA 2026.4.
 
-**Compatible models (all use the RAV311 remote):**
+**Compatible models (all use the RAV311 remote, see pictures and the bottom of the page):**
 - Yamaha RX-V361
-- Yamaha RX-V361BL
-- Yamaha HTR-6030
+- Yamaha X-V361BL
 - Yamaha HTR-6025
+- Yamaha HTR-6030
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/e309d791-43ad-4a20-9c49-df5f9dc5df1f" />
 
 ## Requirements
 
@@ -49,3 +51,7 @@ All entities use **assumed state** — IR is one-way, so HA tracks the last comm
 
 The RAV311 remote uses the **Pioneer IR protocol** at 40 kHz.
 All codes were sourced from a working ESPHome configuration and verified against the physical remote.
+
+<img width="353" height="1500" alt="image" src="https://github.com/user-attachments/assets/970544dd-b312-4fa4-8dad-ea983c7817cc" />
+
+
