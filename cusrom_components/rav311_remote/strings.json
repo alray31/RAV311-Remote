@@ -1,0 +1,17 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up RAV311 Remote",
+        "description": "Select the infrared transmitter pointed at your Yamaha receiver (RX-V361, RX-V361BL, HTR-6030, HTR-6025).",
+        "data": {
+          "infrared_entity_id": "Infrared transmitter"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This transmitter is already configured for a RAV311 Remote.",
+      "no_emitters": "No infrared transmitter found. Set up an ESPHome IR proxy first."
+    }
+  }
+}
