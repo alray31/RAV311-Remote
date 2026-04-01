@@ -19,8 +19,7 @@ DOMAIN = "rav311_remote"
 SUPPORTED_FEATURES = (
     MediaPlayerEntityFeature.TURN_ON
     | MediaPlayerEntityFeature.TURN_OFF
-    | MediaPlayerEntityFeature.VOLUME_UP
-    | MediaPlayerEntityFeature.VOLUME_DOWN
+    | MediaPlayerEntityFeature.VOLUME_STEP
     | MediaPlayerEntityFeature.VOLUME_MUTE
     | MediaPlayerEntityFeature.SELECT_SOURCE
 )
