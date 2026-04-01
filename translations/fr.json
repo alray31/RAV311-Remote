@@ -1,0 +1,17 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configurer RAV311 Remote",
+        "description": "Sélectionnez l'émetteur infrarouge pointé vers votre ampli Yamaha (RX-V361, RX-V361BL, HTR-6030, HTR-6025).",
+        "data": {
+          "infrared_entity_id": "Émetteur infrarouge"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Cet émetteur est déjà configuré pour un RAV311 Remote.",
+      "no_emitters": "Aucun émetteur infrarouge trouvé. Configurez d'abord un proxy IR ESPHome."
+    }
+  }
+}
