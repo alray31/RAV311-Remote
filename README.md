@@ -17,6 +17,8 @@ Control your Yamaha AV receiver from Home Assistant via infrared, using the nati
 
 ## Installation via HACS
 
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?category=integration&repository=RAV311-Remote&owner=alray31)
+
 1. In HACS, go to **Integrations → Custom repositories**
 2. Add this repository URL and select category **Integration**
 3. Click **Download**
