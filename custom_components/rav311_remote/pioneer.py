@@ -1,5 +1,5 @@
 from __future__ import annotations
-from dataclasses import dataclass, field
+
 from infrared_protocols import Command, Timing
 
 PIONEER_FREQUENCY_HZ = 40_000
@@ -23,13 +23,12 @@ def _encode_uint16_lsb(value: int) -> list[Timing]:
     return result
 
 
-@dataclass
 class PioneerCommand(Command):
-    """Pioneer IR command compatible with infrared_protocols.Command."""
+    """Pioneer IR command."""
 
-    rc_code: int
-    repeat: int = 2
-    modulation: int = field(default=PIONEER_FREQUENCY_HZ, init=False)
+    def __init__(self, rc_code: int, repeat: int = 2) -> None:
+        super().__init__(modulation=PIONEER_FREQUENCY_HZ, repeat_count=repeat - 1)
+        self.rc_code = rc_code
 
     def get_raw_timings(self) -> list[Timing]:
         address = (self.rc_code & 0xFF00) | ((~(self.rc_code >> 8)) & 0xFF)
@@ -43,8 +42,4 @@ class PioneerCommand(Command):
         frame.extend(_encode_uint16_lsb(address))
         frame.extend(_encode_uint16_lsb(command))
         frame.append(Timing(high_us=_TRAILER_HIGH, low_us=_TRAILER_LOW))
-
-        timings = list(frame)
-        for _ in range(self.repeat - 1):
-            timings.extend(frame)
-        return timings
+        return frame
