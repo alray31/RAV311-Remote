@@ -1,7 +1,7 @@
 {
   "domain": "rav311_remote",
   "name": "RAV311 Remote",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "config_flow": true,
   "documentation": "https://github.com/alray31/rav311_remote",
   "issue_tracker": "https://github.com/alray31/rav311_remote/issues",
