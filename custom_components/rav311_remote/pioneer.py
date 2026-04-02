@@ -27,8 +27,9 @@ class PioneerCommand(Command):
     """Pioneer IR command."""
 
     def __init__(self, rc_code: int, repeat: int = 2) -> None:
-        super().__init__(modulation=PIONEER_FREQUENCY_HZ, repeat_count=repeat - 1)
+        super().__init__(modulation=PIONEER_FREQUENCY_HZ, repeat_count=0)
         self.rc_code = rc_code
+        self._repeat = repeat
 
     def get_raw_timings(self) -> list[Timing]:
         address = (self.rc_code & 0xFF00) | ((~(self.rc_code >> 8)) & 0xFF)
@@ -42,4 +43,8 @@ class PioneerCommand(Command):
         frame.extend(_encode_uint16_lsb(address))
         frame.extend(_encode_uint16_lsb(command))
         frame.append(Timing(high_us=_TRAILER_HIGH, low_us=_TRAILER_LOW))
-        return frame
+
+        timings: list[Timing] = []
+        for _ in range(self._repeat):
+            timings.extend(frame)
+        return timings
