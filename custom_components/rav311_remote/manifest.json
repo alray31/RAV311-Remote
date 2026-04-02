@@ -1,12 +1,12 @@
 {
   "domain": "rav311_remote",
   "name": "RAV311 Remote",
-  "version": "0.0.9",
-  "config_flow": true,
-  "documentation": "https://github.com/alray31/rav311_remote",
-  "issue_tracker": "https://github.com/alray31/rav311_remote/issues",
-  "dependencies": ["infrared"],
   "codeowners": ["@alray31"],
+  "config_flow": true,
+  "dependencies": ["infrared"],
+  "documentation": "https://github.com/alray31/rav311_remote",
   "iot_class": "assumed_state",
-  "requirements": []
+  "issue_tracker": "https://github.com/alray31/rav311_remote/issues",
+  "requirements": [],
+  "version": "1.0.0"
 }
