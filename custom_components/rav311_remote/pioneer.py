@@ -1,6 +1,12 @@
 from __future__ import annotations
 
-from infrared_protocols import Command, Timing
+from infrared_protocols import Command
+from dataclasses import dataclass
+
+@dataclass
+class Timing:
+    high_us: int
+    low_us: int
 
 PIONEER_FREQUENCY_HZ = 40_000
 _HEADER_HIGH = 9000
