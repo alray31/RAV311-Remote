@@ -1,5 +1,4 @@
 """Media player entity for RAV311 Remote via infrared."""
-
 from __future__ import annotations
 
 from homeassistant.components.media_player import (
@@ -70,10 +69,12 @@ class RAV311RemoteMediaPlayer(YamahaIRMixin, MediaPlayerEntity):
             "manufacturer": "Yamaha",
             "model": "RX-V361 / RX-V361BL / HTR-6030 / HTR-6025",
         }
-        # Assumed state — starts unknown
+        # Assumed state
         self._attr_state = MediaPlayerState.OFF
         self._attr_is_volume_muted = False
         self._attr_source = None
+        # Volume level must be set for HA to show the +/- buttons
+        self._attr_volume_level = 0.5
 
     @property
     def assumed_state(self) -> bool:
@@ -91,9 +92,13 @@ class RAV311RemoteMediaPlayer(YamahaIRMixin, MediaPlayerEntity):
 
     async def async_volume_up(self) -> None:
         await self._send(YamahaCode.VOLUME_UP)
+        self._attr_volume_level = min(1.0, (self._attr_volume_level or 0.5) + 0.02)
+        self.async_write_ha_state()
 
     async def async_volume_down(self) -> None:
         await self._send(YamahaCode.VOLUME_DOWN)
+        self._attr_volume_level = max(0.0, (self._attr_volume_level or 0.5) - 0.02)
+        self.async_write_ha_state()
 
     async def async_mute_volume(self, mute: bool) -> None:
         await self._send(YamahaCode.MUTE)
