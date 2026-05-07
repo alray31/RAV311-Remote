@@ -3,12 +3,12 @@ from infrared_protocols import Command
 
 PIONEER_FREQUENCY_HZ = 40_000
 
-_HEADER_HIGH = 9000
-_HEADER_LOW  = 4500
-_BIT_HIGH    = 560
-_ONE_LOW     = 1690
-_ZERO_LOW    = 560
-_TRAILER_HIGH = 560
+_HEADER_HIGH  =  9000
+_HEADER_LOW   =  4500
+_BIT_HIGH     =   560
+_ONE_LOW      =  1690
+_ZERO_LOW     =   560
+_TRAILER_HIGH =   560
 _TRAILER_LOW  = 25500
 
 
@@ -21,10 +21,11 @@ def _reverse_bits(b: int) -> int:
 
 
 def _encode_uint16_lsb(value: int) -> list[int]:
+    """Encode 16 bits LSB-first as alternating +mark / -space integers."""
     result = []
     for _ in range(16):
-        result.append(_BIT_HIGH)
-        result.append(_ONE_LOW if (value & 1) else _ZERO_LOW)
+        result.append(_BIT_HIGH)                                   # positive = pulse
+        result.append(-(_ONE_LOW if (value & 1) else _ZERO_LOW))   # negative = space
         value >>= 1
     return result
 
@@ -44,10 +45,12 @@ class PioneerCommand(Command):
         address   = ((~rev_high & 0xFF) << 8) | rev_high
         command   = ((~low_byte & 0xFF) << 8) | low_byte
 
-        frame: list[int] = [_HEADER_HIGH, _HEADER_LOW]
+        frame: list[int] = [
+            _HEADER_HIGH, -_HEADER_LOW,   # header: +pulse / -space
+        ]
         frame.extend(_encode_uint16_lsb(address))
         frame.extend(_encode_uint16_lsb(command))
-        frame.extend([_TRAILER_HIGH, _TRAILER_LOW])
+        frame.append(_TRAILER_HIGH)       # trailing pulse only
 
         timings: list[int] = []
         for _ in range(self._repeat):
