@@ -4,9 +4,9 @@
   "codeowners": ["@alray31"],
   "config_flow": true,
   "dependencies": ["infrared"],
-  "documentation": "https://github.com/alray31/rav311_remote",
+  "documentation": "https://github.com/alray31/rav311-remote",
   "iot_class": "assumed_state",
-  "issue_tracker": "https://github.com/alray31/rav311_remote/issues",
+  "issue_tracker": "https://github.com/alray31/rav311-remote/issues",
   "requirements": [],
   "version": "1.0.0"
 }
