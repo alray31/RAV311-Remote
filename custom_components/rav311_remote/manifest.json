@@ -4,9 +4,10 @@
   "codeowners": ["@alray31"],
   "config_flow": true,
   "dependencies": ["infrared"],
-  "documentation": "https://github.com/alray31/rav311-remote",
+  "documentation": "https://github.com/alray31/RAV311-remote",
   "iot_class": "assumed_state",
-  "issue_tracker": "https://github.com/alray31/rav311-remote/issues",
+  "issue_tracker": "https://github.com/alray31/RAV311-remote/issues",
   "requirements": [],
+  "homeassistant": "2026.6.0",
   "version": "1.0.5"
 }
