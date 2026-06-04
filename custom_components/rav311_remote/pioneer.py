@@ -1,5 +1,5 @@
 from __future__ import annotations
-from infrared_protocols import Command
+from infrared_protocols.commands import Command
 
 PIONEER_FREQUENCY_HZ = 40_000
 
