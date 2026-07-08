@@ -2,7 +2,8 @@
 
 # RAV311 Remote — Home Assistant Custom Integration:
 
-[![HACS Custom](https://img.shields.io/badge/HACS-Custom-orange.svg?style=flat)](https://github.com/hacs/integration) [![HACS Validation](https://github.com/alray31/RAV311-Remote/actions/workflows/hacs.yml/badge.svg)](https://github.com/alray31/RAV311-Remote/actions/workflows/hacs.yml) [![Hassfest](https://github.com/alray31/RAV311-Remote/actions/workflows/hassfest.yml/badge.svg)](https://github.com/alray31/RAV311-Remote/actions/workflows/hassfest.yml) [![GitHub Release](https://img.shields.io/github/v/release/alray31/RAV311-Remote?style=flat&color=orange)](https://github.com/alray31/RAV311-Remote/releases) [![GitHub Release Date](https://img.shields.io/github/release-date/alray31/RAV311-Remote)](https://github.com/alray31/RAV311-Remote/releases) [![GitHub Stars](https://img.shields.io/github/stars/alray31/RAV311-Remote?style=flat)](https://github.com/alray31/RAV311-Remote/stargazers) [![GitHub Forks](https://img.shields.io/github/forks/alray31/RAV311-Remote?style=flat)](https://github.com/alray31/RAV311-Remote/network/members) [![GitHub Issues](https://img.shields.io/github/issues/alray31/RAV311-Remote)](https://github.com/alray31/RAV311-Remote/issues) [![Last Commit](https://img.shields.io/github/last-commit/alray31/RAV311-Remote)](https://github.com/alray31/RAV311-Remote/commits) [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2026.6%2B-41BDF5?logo=homeassistant)](https://www.home-assistant.io/) [![License](https://img.shields.io/github/license/alray31/RAV311-Remote)](LICENSE)
+
+[![HACS Default](https://img.shields.io/badge/HACS-Default-orange.svg?style=flat)](https://github.com/hacs/default) [![Downloads](https://img.shields.io/github/downloads/alray31/RAV311-Remote/total.svg?style=flat)](https://github.com/alray31/RAV311-Remote/releases) [![HACS Validation](https://github.com/alray31/RAV311-Remote/actions/workflows/hacs.yml/badge.svg)](https://github.com/alray31/RAV311-Remote/actions/workflows/hacs.yml) [![Hassfest](https://github.com/alray31/RAV311-Remote/actions/workflows/hassfest.yml/badge.svg)](https://github.com/alray31/RAV311-Remote/actions/workflows/hassfest.yml) [![GitHub Release](https://img.shields.io/github/v/release/alray31/RAV311-Remote?style=flat&color=orange)](https://github.com/alray31/RAV311-Remote/releases) [![GitHub Release Date](https://img.shields.io/github/release-date/alray31/RAV311-Remote)](https://github.com/alray31/RAV311-Remote/releases) [![GitHub Stars](https://img.shields.io/github/stars/alray31/RAV311-Remote?style=flat)](https://github.com/alray31/RAV311-Remote/stargazers) [![GitHub Forks](https://img.shields.io/github/forks/alray31/RAV311-Remote?style=flat)](https://github.com/alray31/RAV311-Remote/network/members) [![GitHub Issues](https://img.shields.io/github/issues/alray31/RAV311-Remote)](https://github.com/alray31/RAV311-Remote/issues) [![Last Commit](https://img.shields.io/github/last-commit/alray31/RAV311-Remote)](https://github.com/alray31/RAV311-Remote/commits) [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2026.6%2B-41BDF5?logo=homeassistant)](https://www.home-assistant.io/) [![License](https://img.shields.io/github/license/alray31/RAV311-Remote)](LICENSE)
 
 Control your Yamaha AV receiver from Home Assistant via infrared, using the native [`infrared`](https://www.home-assistant.io/integrations/infrared/) building block introduced in HA 2026.4.
 
@@ -21,12 +22,19 @@ Control your Yamaha AV receiver from Home Assistant via infrared, using the nati
 
 ## Installation via HACS:
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?category=integration&repository=RAV311-Remote&owner=alray31)
+RAV-311-Remote is avaible in the HACS store (Home Assistant Community Store).
 
-1. In HACS, go to **Integrations → Custom repositories**
-2. Add this repository URL and select category **Integration**
-3. Click **Download**
-4. Restart Home Assistant
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=alray31&repository=RAV311-Remote)
+
+_or_
+
+1. Install HACS if you don't have it already
+2. Open HACS in Home Assistant
+3. Search for "RAV311-Remote"
+4. Click the download button.
+5. Restart Home Assistant
+6. Go to the Home Assistant integration page
+7. Install the RAV311-Remote integration
 
 ## Manual installation:
 
